@@ -1,0 +1,38 @@
+{
+  "root": true, // ESLint가 해당 설정 파일을 루트 설정 파일로 인식.
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "settings": {
+    "react": {
+      "version": "detect" // React의 버전을 자동으로 감지하여 사용.
+    }
+  },
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "env": {
+    "es6": true, // ES6 문법을 사용할 수 있도록 설정.
+    "node": true, // Node.js 환경에서 사용하는 전역 변수를 사용할 수 있도록 설정.
+    "browser": true // 브라우저 환경에서 사용하는 전역 변수를 사용할 수 있도록 설정.
+  },
+  "parserOptions": {
+    "project": ["./tsconfig.json"], // tsconfig.json 파일을 참조하여 타입스크립트 설정을 사용.
+    "ecmaFeatures": {
+      "jsx": true // JSX 문법을 사용하기 위해 true로 설정.
+    },
+    "ecmaVersion": 6, // ES6 문법을 사용하기 위해 버전을 6으로 설정.
+    "sourceType": "module" // ES6 import/export를 사용하기 위해 module로 설정.
+  },
+  "rules": {
+    "no-console": "warn", // console.log 사용시 경고를 발생.
+    "no-unused-vars": "error", // 선언했지만 사용하지 않은 변수에 대해 에러를 발생.
+    "camelcase": "warn", // camelcase를 지키지 않은 경우 경고를 발생.
+    "no-multiple-empty-lines": ["warn", { "max": 1 }], // 여러 줄의 빈 줄을 허용하지 않음.
+    "no-undef": "warn", // 선언하지 않은 변수를 사용한 경우 경고를 발생.
+    "react/jsx-key": "error", // key prop을 사용하지 않은 경우 에러를 발생.
+    "@typescript-eslint/no-unused-vars": "error", // 선언했지만 사용하지 않은 변수에 대해 에러를 발생.
+    "@typescript-eslint/no-explicit-any": "warn", // any 타입을 사용한 경우 경고를 발생.
+    "@typescript-eslint/no-empty-function": "error", // 빈 함수를 사용한 경우 에러를 발생.
+    "react-hooks/rules-of-hooks": "error", // hook의 규칙을 위반하는 경우 에러를 발생.
+    "react-hooks/exhaustive-deps": "warn" // dependecy array를 올바르게 작성하지 않은 경우 경고를 발생.
+  },
+  "ignorePatterns": ["*.js", "*.json", "*.lock", "node_modules"]
+}

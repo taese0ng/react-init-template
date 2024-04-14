@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    ["@babel/preset-react", { "runtime": "automatic" }], // react의 jsx를 사용하기 위한 설정
+    ["@babel/preset-typescript", { "allowNamespaces": true }] // typescript를 사용하기 위한 설정
+  ],
+  // styled-component의 이름을 class명으로 노출 (dev모드에서만 적용)
+  "plugins": [["styled-components", { "displayName": true }]]
+}

@@ -1,0 +1,35 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "es6",
+    // Javascript 파일을 컴파일할지 여부
+    "allowJs": false,
+    // 모든 해석 전략을 지정
+    "moduleResolution": "node",
+    // CommonJS와 ES 모듈 간의 상호 운용성을 허용할지 여부
+    "esModuleInterop": true,
+    // 기본 import를 허용할지 여부
+    "allowSyntheticDefaultImports": true,
+    // 모든 엄격한 타입 검사 옵션을 활서오하할지 여부
+    "strict": true,
+    // 파일 이름의 대소문자를 일관되게 유지하도록 강제할지 여부
+    "forceConsistentCasingInFileNames": true,
+    // json모듈을 import할 수 있는지 여부
+    "resolveJsonModule": true,
+    // 각 파일을 분리된 모듈로 처리할지 여부
+    "isolatedModules": true,
+    // 사용되지 않는 지역 변수에 대해 오류를 발생시킬지 여부
+    "noUnusedLocals": true,
+    // const enum 선언을 보존할지 여부
+    "preserveConstEnums": true,
+    // 출력에서 주석을 제거할지 여부
+    "removeComments": false,
+    // any 타입의 암시적 사용에 대한 오류를 발생시킬지 여부
+    "noImplicitAny": true,
+    // 컴파일러가 인식해야하는 타입 선언 모듈의 목록
+    "types": ["react", "react-dom", "node"]
+  },
+  "exclude": ["node_modules", "*.js", "*.jsx"]
+}
