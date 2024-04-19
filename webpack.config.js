@@ -11,6 +11,7 @@ module.exports = (_, argv) => {
     entry: './src/index.tsx',
     output: {
       filename: 'bundle.js',
+      publicPath: '/' // webpack-dev-server에서 빌드한 파일을 서빙할 경로
     },
     target:['web', 'es6'],
     optimization:{ 
