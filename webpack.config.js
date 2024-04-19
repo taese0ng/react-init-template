@@ -78,6 +78,7 @@ module.exports = (_, argv) => {
       port: 9000,
       hot: true,
       open: true,
+      historyApiFallback: true, // dev server에서 라우팅을 사용하기 위한 설정
     },
     // 터미널에 출력되는 정보를 커스터마이징.
     stats:{
