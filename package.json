@@ -8,7 +8,21 @@
   },
   "scripts": {
     "start": "webpack-dev-server --progress --config ./webpack.config.js",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint-staged": "lint-staged",
+    "postinstall": "husky",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@tanstack/react-query": "^5.29.0",
@@ -39,6 +53,8 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.10",
