@@ -13,7 +13,7 @@ module.exports = (_, argv) => {
       filename: "bundle.js",
       publicPath: "/", // webpack-dev-server에서 빌드한 파일을 서빙할 경로
     },
-    target: ["web", "es6"],
+    target: ["web", "es2020"],
     optimization: {
       minimize: isProduction,
       minimizer: [
@@ -73,7 +73,10 @@ module.exports = (_, argv) => {
         // SVG 로더
         {
           test: /\.svg$/i,
-          use: ["@svgr/webpack"],
+          type: "asset/resource",
+          generator: {
+            filename: "assets/images/[hash][ext][query]",
+          },
         },
         // 웹폰트 로더
         {
@@ -109,7 +112,7 @@ module.exports = (_, argv) => {
           runtimeErrors: true,
         },
       },
-      port: 9000,
+      port: 3000,
       hot: true,
       open: true,
       historyApiFallback: true, // dev server에서 라우팅을 사용하기 위한 설정
