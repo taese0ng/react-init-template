@@ -9,6 +9,8 @@ const theme = {
     dropdown: 300,
     toast: 400,
   },
-};
+} as const;
+
+export type Theme = typeof theme;
 
 export default theme;

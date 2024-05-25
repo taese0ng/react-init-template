@@ -14,4 +14,4 @@ const sizes: Sizes = {
 export const media: Media = {
   mobile: `@media (max-width: ${sizes.desktop})`,
   desktop: `@media (min-width: ${sizes.desktop})`,
-};
+} as const;
